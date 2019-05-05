@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsCell" customModule="News" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="TEm-nF-JPO" customClass="NewsCell" customModule="News" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TEm-nF-JPO" id="sBG-pL-Z4Q">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZc-pS-b5D">
+                        <rect key="frame" x="20" y="5" width="315" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="b2s-vw-uiD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="8"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CPd-BP-oGS">
+                        <rect key="frame" x="20" y="17" width="315" height="26.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uB3-gp-2WB">
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qj-xk-8y0">
+                        <rect key="frame" x="335" y="20.5" width="20" height="20"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="SgJ-1O-9EA"/>
+                            <constraint firstAttribute="width" constant="20" id="XXe-fj-cwY"/>
+                        </constraints>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KZc-pS-b5D" firstAttribute="leading" secondItem="CPd-BP-oGS" secondAttribute="leading" id="517-2d-Ojg"/>
+                    <constraint firstItem="CPd-BP-oGS" firstAttribute="leading" secondItem="sBG-pL-Z4Q" secondAttribute="leading" constant="20" id="8Yr-MK-CWo"/>
+                    <constraint firstItem="KZc-pS-b5D" firstAttribute="trailing" secondItem="CPd-BP-oGS" secondAttribute="trailing" id="9GJ-Le-u1v"/>
+                    <constraint firstItem="KZc-pS-b5D" firstAttribute="top" secondItem="sBG-pL-Z4Q" secondAttribute="top" constant="5" id="9Ip-Pc-TMb"/>
+                    <constraint firstAttribute="trailing" secondItem="0qj-xk-8y0" secondAttribute="trailing" constant="20" id="N0y-ej-WHX"/>
+                    <constraint firstAttribute="trailing" secondItem="CPd-BP-oGS" secondAttribute="trailing" constant="40" id="Zrt-FQ-b3S"/>
+                    <constraint firstItem="0qj-xk-8y0" firstAttribute="centerY" secondItem="CPd-BP-oGS" secondAttribute="centerY" id="avk-Sm-29B"/>
+                    <constraint firstAttribute="bottom" secondItem="CPd-BP-oGS" secondAttribute="bottom" id="hop-PO-hW2"/>
+                    <constraint firstItem="CPd-BP-oGS" firstAttribute="top" secondItem="KZc-pS-b5D" secondAttribute="bottom" id="lC1-63-DU7"/>
+                    <constraint firstItem="CPd-BP-oGS" firstAttribute="width" secondItem="KZc-pS-b5D" secondAttribute="width" id="snB-jh-jiw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="likeButton" destination="0qj-xk-8y0" id="Yvz-xu-4D7"/>
+                <outlet property="pubDateLabel" destination="KZc-pS-b5D" id="jLY-fj-M2W"/>
+                <outlet property="titleLabel" destination="uB3-gp-2WB" id="n9I-sa-jfp"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

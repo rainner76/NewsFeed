@@ -25,27 +25,21 @@ class RssDetailsViewController: RssBaseViewController {
         return 88
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        guard let categoryNews = categoryNews  else {
-            return
-        }
-        
-        let keys = Array(categoryNews.keys).sorted()
-        
-        if let news = categoryNews[keys[indexPath.section]], indexPath.row < news.count {
-            
-            let loadedNews = news[indexPath.row]
-            self.loadNews(with: loadedNews)
-        }
-    }
-    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let loadedNews = super.mappedNews(from: indexPath) else {
+            return
+        }
+        
+        self.loadNews(with: loadedNews)
+    }
 }
 
-// Mark: - NewsFeedable -
+// Mark: - Extension: NewsFeedable -
 
 extension RssDetailsViewController: NewsFeedable {
     

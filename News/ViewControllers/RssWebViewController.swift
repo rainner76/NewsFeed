@@ -53,6 +53,12 @@ class RssWebViewController: UIViewController {
         self.news = news
     }
     
+    deinit {
+        debugPrint("\(self) deinit")
+    }
+    
+    // MARK: - LifeTime -
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()

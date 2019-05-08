@@ -170,7 +170,7 @@ class RssBaseViewController: UITableViewController {
     }
     
     
-    // MARK: - Private Methods -
+    // MARK: - Public Methods -
     
     ///
     /// This will map a news from indexpath
@@ -179,7 +179,7 @@ class RssBaseViewController: UITableViewController {
     ///
     /// - returns: the mapped news
     ///
-    fileprivate func mappedNews(from indexPath: IndexPath) -> News? {
+    func mappedNews(from indexPath: IndexPath) -> News? {
         
         guard let categoryNews = categoryNews else {
             return nil

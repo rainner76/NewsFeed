@@ -25,22 +25,15 @@ class RssMainViewController: RssBaseViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let categoryNews = categoryNews else {
+        guard let loadedNews = super.mappedNews(from: indexPath) else {
             return
         }
         
-        let keys = Array(categoryNews.keys).sorted()
-        
-        if let news = categoryNews[keys[indexPath.section]], indexPath.row < news.count {
-            
-            let loadedNews = news[indexPath.row]
-            
-            self.loadNews(with: loadedNews)
-        }
+        self.loadNews(with: loadedNews)
     }
 }
 
-// Mark: - NewsFeedable -
+// Mark: - Extension: NewsFeedable -
 
 extension RssMainViewController: NewsFeedable {
     
@@ -88,8 +81,6 @@ extension RssMainViewController: NewsFeedable {
             })
         }
     }
-    
-    
 }
 
 
